@@ -1,6 +1,6 @@
 # Rubik's Cube Simulator - Command Line Interface
 ## About
-I made this short and simple Rubik's Cube simulator for the 2x2, 3x3, 4x4, 5x5 and 6x6 puzzles back in Grade 10 during a school term break. This project was an exercise in the fundamentals of OOP and making use of classes in Python 3, featuring the use of inheritance and polymorphism.
+I made this short and simple Rubik's Cube simulator for the 2x2, 3x3, 4x4, 5x5 and 6x6 puzzles back in Grade 10 during a school term break. This project was an exercise in the fundamentals of OOP and making use of classes in Python 3, featuring the use of inheritance and polymorphism. To use the program you will need to have `colorama` installed along with the Python stdlib.
 
 ## Functionality
 When the program first starts up, a menu will ask for which cube to interact with; for example entering `cube3` yields the 3x3 cube.
