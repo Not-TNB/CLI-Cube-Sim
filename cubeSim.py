@@ -164,8 +164,8 @@ class Cube:
     # Came up with my own face rotation mapping algorithm instead of the usual transpose+reverse
     # (This is due to the data structure of each face of the club being a 1D list instead of a square matrix, making
     # the usual method more complicated to implement)
-    self.Cmap = [0]*self.area
-    self.ACmap = [0]*self.area
+    self.Cmap = []*self.area
+    self.ACmap = []*self.area
 
     p1 = (self.area) - self.size
     p2 = self.size - 1
@@ -338,7 +338,7 @@ class Cube:
         # balls
         if move[0] != (['balls']+alg)[-1][0]: break
 
-      os.system('clear')
+      clear()
       self.turn(move)
       print(self)
       alg.append(move)
@@ -347,7 +347,7 @@ class Cube:
 
   def solve(self):
     alg1 = ''
-    os.system('clear')
+    clear()
 
     pt1 = '\n\n--- STEP 1: CROSS ---\n\n'
 
@@ -718,7 +718,7 @@ class Cube2(Cube):
   def solve(self):
     alg = ''
 
-    os.system('clear')
+    clear()
     print('######## SOLVING ########\n--- STEP 1: FIRST LAYER ---\n')
 
     wrbPiece = Counter(['w', 'b', 'r'])
@@ -1078,10 +1078,10 @@ cube5: 5x5 cube
 cube6: 6x6 cube'''
 
 def cubeChange():
-  os.system('clear')
+  clear()
   choice = ''
   while True:
-    os.system('clear')
+    clear()
     print(cubeList)
     choice = input('\nWhich cube would you like to use? > ')
 
@@ -1092,12 +1092,16 @@ def cubeChange():
       case 'cube5': return cube5
       case 'cube6': return cube6
       case _: input('ERROR: requested puzzle not recognized > ')
+  
+def clear():
+  os.system('cls' if os.name == 'nt' else 'clear')
+  print("\033c\033[3J")
 
 def main():
   cube = cubeChange()
 
   while True:
-    os.system('clear') # mac
+    clear()
     print(cube)
 
     if cube.isSolved():
@@ -1150,7 +1154,7 @@ def main():
             input('ERROR: Scramble length must be a positive integer > ')
             continue
 
-        os.system('clear')
+        clear()
         print(cube)
 
         input(f'SCRAMBLE ALGORITHM: {" ".join(output[0])}\nExecution time for scramble: {output[1]}s\n> ')
